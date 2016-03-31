@@ -1,0 +1,13 @@
+extends ../main
+block title
+    | Dashboard
+block content
+    include ../_blocks/_header
+    include ../_blocks/_sidebar
+    .main-content
+        .title
+            | Dashboard
+        include ../_blocks/_dashboard
+        .title
+            | Network
+        include ../_blocks/_network

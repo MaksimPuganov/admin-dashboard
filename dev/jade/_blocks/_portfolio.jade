@@ -1,0 +1,26 @@
+//- portfolio block start
+section.portfolio__block
+    .container
+        article.article__block
+            h2.title__block
+                | PORTFOLIO
+        .gallery__block
+            - var menus =['ALL','ILLUSTRATIONS','LOGO','Branding','WEB DESIGN']
+            //- - var filtres = ['all','']
+            
+            ul.gallery__menu
+                each val in menus
+                    li.menu__item
+                        a.menu__link(class="filter" data-filter="all")= val
+                  //- code...
+            #gallery
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+                .mix.category-1
+
+//- portfolio block end

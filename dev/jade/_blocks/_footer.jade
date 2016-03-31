@@ -1,0 +1,11 @@
+// footer block start
+footer.footer
+    .container
+        .copyright.left
+            | &copy; 2016 Nishant Bazzad
+        - var socials = ['fb','tw','comp','linked']
+        ul.socials.right
+            each icon in socials
+                li.socials__item
+                    a.socials__link(href="#!" class="socials__icon_" + icon)
+//footer block end

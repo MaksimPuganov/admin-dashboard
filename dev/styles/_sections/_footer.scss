@@ -1,0 +1,30 @@
+.copyright {
+    color: #999;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.socials__item {
+    display: inline-block;
+}
+
+.socials__link {
+    display: block;
+}
+.socials__icon_fb {
+    @include sprite($icon-fb);
+}
+
+.socials__icon_tw {
+    @include sprite($icon-tw);
+}
+
+.socials__icon_comp {
+    @include sprite($icon-comp);
+}
+
+.socials__icon_linked {
+    @include sprite($icon-linked);
+}

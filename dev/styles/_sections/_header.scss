@@ -1,0 +1,62 @@
+.header {
+	position: absolute;
+    width: 100%;
+	z-index: 3;
+	height: 44px;
+	background-color: #fff;
+	border-bottom: 3px solid #2d3d51;
+
+	.logo {
+		z-index: 1;
+		color: #233245;
+	}
+}
+/* logo in header(mobile version) and side-nav (tablet & desktop) */
+.logo {
+	height: 44px;
+	padding: 20px 10px 0px 40px;
+	font-weight: 700;
+
+	.fa {
+		font-size: 22px;
+	}
+
+	.title__block {
+		margin-left: 5px;
+		text-transform: uppercase;
+	}
+}
+
+.nav-trigger {
+	position: relative;
+	float: right;
+	width: 20px;
+	height: 44px;
+	right: 30px;
+	display: block;
+
+	.humburger {
+		top: 50%;
+		width: 20px;
+		height: 2px;
+		background-color: #35475e;
+		position: absolute;
+
+		&:before, &:after {
+			content: '';
+			width: 20px;
+			height: 2px;
+			background-color: #35475e;
+			position: absolute;
+		}
+
+		&:before {
+			top: -6px;
+		}
+
+		&:after {
+			top: 6px;
+		}
+	}
+
+}

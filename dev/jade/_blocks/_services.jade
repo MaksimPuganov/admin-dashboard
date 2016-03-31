@@ -1,0 +1,18 @@
+//- services block start
+section.services__block
+    .container
+        article.article__block
+            h2.title__block
+                | Our Services
+        .card__block
+            - var names = ['Logo DESIGN', 'Web Design', 'Branding', 'illustrations']
+            - var icons = ['pen','web','lamp','drawing']
+            - for( var i = 0; i < names.length; i++ )
+                - var value= names[i]
+                - var icn = icons[i]
+                .card__item
+                    div.icon(class="icon__#{icn}")
+                    h3.card__title= value
+                    p.card__desc
+                        | Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.
+//- services block end
