@@ -1,27 +1,21 @@
 //- netwrok block start
-.widget
+.network__block.hidden
     .title
-        | Настройка сети
-    ul.network__list
-        li.network__item.checkbox
-            label.network__label
-                input(type="checkbox" id="dhcp")
-                span.label__text Получить настройки по DHCP
-        li.network__item.ip-addres
-            label.network__label IP-addres:
-                input(type="text" id="ipdaress")
-        li.network__item.netmask
-            label.network__label Netmask:
-                input(type="text" id="netmask")
-        li.network__item.dns
-            label.network__label DNS-server:
-                input(type="text" id="dns")
-        li.network__item.gateway
-            label.network__label Gateway:
-                input(type="text" id="gateway")
-        li.network__item.port
-            label.network__label Port:
-                input(type="text" id="port")
-    .saving__block
-        a.btn(href="!#") Save
+        | Network
+    .widget
+        .title
+            | Настройка сети
+        - var inputs = ['IP-addres','Netmask','DNS-server','Gateway','Port']
+        
+        ul.network__list
+            li.network__item.checkbox
+                label.network__label
+                    input(type="checkbox")
+                    span.label__text Получить настройки по DHCP
+            each val in inputs
+                li.network__item.ip-addres
+                    label.network__label= val
+                        input(type="text")
+        .saving__block
+            a.btn(href="#!") Сохранить
 //- netwrok block end

@@ -1,0 +1,19 @@
+.descr__block {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.descr__item {
+    margin-bottom: 8px;
+
+    .name__block {
+        text-align: left;
+        width: 52%;
+    }
+
+    .item__block {
+        float: right;
+        width: 48%;
+        text-align: right;
+    }
+}

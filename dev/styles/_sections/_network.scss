@@ -1,14 +1,85 @@
-.network__label {
-    cursor: pointer;
+@include keyframes(fadeIn) {
+  0% {
+    @include transform(scale(0));
+  }
+  90% {
+    @include transform(scale(1.4));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+@include keyframes(fadeOut) {
+  0% {
+    @include transform(scale(1));
+  }
+  90% {
+    @include transform(scale(1.4));
+  }
+  100% {
+    @include transform(scale(0));
+  }
+}
+.network__block {
 
-    // .label__text {
-    //     &:before {
-    //
-    //     }
-    // }
+    .widget {
+        height: auto;
+    }
+}
+input {
+        border-color: #cccccc;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 2px 2px 7px 0 rgba(204,204,204,.50);
+        float: right;
+    &:focus {
+        outline: none;
+    }
+}
+.network__list {
+    margin: 0 auto;
+    width: 300px;
+    padding-bottom: 10px;
+}
+.saving__block {
+    text-align: center;
+    padding-bottom: 20px;
+
+    &:hover {
+        @include animation(fadeOut 180ms ease-in);
+    }
+
+    .btn {
+        color: white;
+        font-family: Montserrat;
+        font-size: 20px;
+
+    }
+}
+
+.network__item {
+    padding-bottom: 18px;
+
+    &.checkbox {
+        padding-bottom: 5px;
+        text-align: center;
+    }
+}
+.network__label {
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    color: #aaa;
+
+    .label__text {
+        text-align: right;
+    }
 
     input[type="checkbox"] {
-        // visibility: hidden;
         display: none;
 
         +.label__text {
@@ -27,6 +98,7 @@
                 display: inline-block;
                 margin-right: 5px;
                 vertical-align: middle;
+                @include animation(fadeOut 180ms ease-out);
             }
         }
 
@@ -34,16 +106,19 @@
             +.label__text {
                 &:before {
                     content: '\f14a';
-                    color: #06a3e9;
+                    color: #1abc9c;
+                    @include animation(fadeIn 180ms ease-in);
                 }
             }
         }
 
         &:disabled {
             +.label__text {
+                color: #aaa;
+
                 &:before {
                     content: '\f0c8';
-                    color: #06a3e9;
+                    color: #ccc;
                 }
             }
         }

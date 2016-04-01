@@ -1,61 +1,20 @@
+mixin widget(title, descrs)
+    .widget
+        .title= title
+        ul.descr__block
+            each descr in descrs
+                li.descr__item 
+                    span.name__block= descr.name
+                    span.item__block= descr.item
+
+- var info = [{name:'Production:', item:'Esystem PRO'},{name:'Model:', item:'Depo DMM'},{name:'Firmware:', item:'11.07'}]
+- var sensors = [{name:'Температура:', item:'26 С'},{name:'Влажность:', item:'54%'},{name:'Запыленность:', item:'Низкая'}]
+- var lan = [{name:'Состояние:', item:'Подключено'},{name:'IP-addres:', item:'192.168.0.150'},{name:'Netmask:', item:'255.255.255.0'},{name:'DNS:', item:'192.168.0.1'},{name:'Gateway:', item:'192.168.0.1'}]
+- var gsm = [{name:'Состояние:', item:'Подключено'},{name:'Версия:', item:'4.6786.34'},{name:'Оператор:', item:'Мегафон'},{name:'Уровень сигнала:', item:'72 Дбм'},{name:'Баланс:', item:'148 ₽'}]
+.title
+    | Dashboard
 .main
-    .widget
-        .title Общая информация
-        .descr__block
-            .descr__item 
-                span Production:
-                span Esystem PRO
-            .descr__item 
-                span Model:
-                span Depo DMM    
-            .descr__item
-                span Firmware:
-                span 11.07
-    .widget
-        .title Датчики
-        .descr__block
-            .descr__item
-                span Температура:
-                span 26 &deg;С
-            .descr__item
-                span Влажность:
-                span 54%
-            .descr__item
-                span Запыленность:
-                span Низкая
-    .widget
-        .title Настройки сети
-        .descr__block
-            .descr__item
-                span Состояние:
-                span Подключено
-            .descr__item
-                span IP-addres:
-                span 192.168.0.150
-            .descr__item
-                span Netmask:
-                span 255.255.255.0
-            .descr__item
-                span DNS:
-                span 192.168.0.1
-            .descr__item
-                span Gateway:
-                span 192.168.0.1
-    .widget
-        .title GSM модуль
-        .descr__block
-            .descr__item
-                span Состояние:
-                span Подключен
-            .descr__item 
-                span Версия:
-                span 4.6786.34
-            .descr__item 
-                span Оператор:
-                span Мегафон
-            .descr__item 
-                span Уровень сигнала:
-                span 72 Дбм
-            .descr__item 
-                span Баланс:
-                span 148 &#8381;
+    +widget('Общая информация', info)
+    +widget('Датчики', sensors)
+    +widget('Настройки сети', lan)
+    +widget('GSM модуль', gsm)
