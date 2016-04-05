@@ -1,0 +1,21 @@
+.sms__list {
+    @extend .network__list;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.sms__item {
+    @extend .network__item;
+}
+
+.sms__input {
+    @extend .network__input;
+}
+
+.sms__label {
+    @extend .network__label;
+}
+
+.sms__desc {
+    @extend .network__desc;
+}

@@ -1,0 +1,40 @@
+//- notifications block start
+section.notify__block.hidden
+    .title
+        | Notifications
+    .main
+        .widget.notify
+            .title
+                | Электронная почта
+            - var items = [{name:'Email адрес:', item:'support@mail.ru'},{name:'Email адрес DMM:', item:'dmm.test@yandex.ru'},{name:'SMTP сервер:', item:'smtp.mail.ru'},{name:'SMTP порт:', item:'25'}, {name:'Пользователь:', item:'dmm.test@yandex.ru'}, {name:'Пароль:', item:'12345678'}]
+            - var sms = [{name:'Номер CMC:', item:'+79106545246'},{name:'Номер USSD:', item:'#999'}]
+            
+            .wrap
+                ul.mail__list
+                    each val in items
+                        li.mail__item
+                            label.mail__label
+                                span.mail__desc= val.name
+                                input.mail__input(type=((val.name == 'Пароль:') ? "password" : "text") value="#{val.item}")
+                ul.textarea__block
+                    li.textarea__item
+                        span.textarea__desc Монитор:
+                        label.textarea__label
+                            textarea(type="text" readonly)
+                
+            .saving__block
+                a.btn(href="#!") Сохранить
+                a.btn.test(href="#!") Тест
+        .widget
+            .title
+                | СМС уведомления
+            ul.sms__list
+                each val in sms
+                    li.sms__item
+                        label.sms__label
+                            span.sms__desc= val.name
+                            input.sms__input(type="text" value="#{val.item}")
+            .saving__block
+                a.btn(href="#!") Сохранить
+                a.btn.test(href="#!") Тест
+//- notifications block end

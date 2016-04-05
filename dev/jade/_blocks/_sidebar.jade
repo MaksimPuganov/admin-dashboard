@@ -1,28 +1,15 @@
 //- sidebar start
 .side-nav.visible
   .logo
-    i.fa.fa-reddit-alien
+    i.icon-fa.icon-fa-reddit-alien
     span.title__block Brand
   nav.nav
+    - var menus = [{name:'Dashboard',icon:'tachometer',id:'dash'}, {name:'Network',icon:'globe',id:'network'},{name:'Sensors',icon:'cogs',id:'sensors'},{name:'Notification',icon:'envelope',id:'notify'},{name:'Settings',icon:'cog',id:'settings'}]
     ul.nav__list
-        li.nav__item.active
-            a.nav__link(href='#')
-                span.icon
-                    i.fa.fa-tachometer
-                span.title__block Dashboard
-        li.nav__item
-            a.nav__link(href='#')
-                span.icon
-                    i.fa.fa-globe
-                span.title__block Network
-        li.nav__item
-            a.nav__link(href='#')
-                span.icon
-                    i.fa.fa-cogs
-                span.title__block Sensors
-        li.nav__item
-            a.nav__link(href='#')
-                span.icon
-                    i.fa.fa-envelope
-                span.title__block Notification
+        each val in menus
+            li(id="#{val.id}" class="nav__item" + ((val.name == 'Dashboard') ? ' active' : ''))
+                a.nav__link(href='#')
+                    span.icon
+                        i.icon-fa(class="icon-fa-" + val.icon)
+                    span.title__block= val.name
 //- sidebar end

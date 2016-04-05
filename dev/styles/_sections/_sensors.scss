@@ -1,0 +1,49 @@
+.sensors__block {
+    @extend .network__block;
+
+    .btn {
+        border: none;
+        color: white;
+    }
+
+    .reset {
+        text-align: center;
+        background-color: #d55245;
+        margin-left: 20px;
+    }
+}
+
+.sensors__list {
+    @extend .network__list;
+    width: 350px;
+}
+
+.sensors__item {
+    @extend .network__item;
+    padding-bottom: 15px;
+}
+.sensors__input {
+    @extend .network__input;
+    width: 50px;
+
+}
+.grad {
+    position: relative;
+    &:after {
+        content: '°C';
+        font-size: 14px;
+        position: absolute;
+        top: 0;
+        left: 355px;
+    }
+}
+
+.percent {
+    @extend .grad;
+    &:after {
+        content: '%';
+    }
+}
+.sensors__desc {
+    @extend .network__desc;
+}

@@ -1,0 +1,21 @@
+//- sensors block start
+section.sensors__block.hidden
+    
+    .title
+        | Sensors
+    .main
+        .widget
+            .title
+                | Настройка датчиков
+            - var inputs = [{name: 'Верхний порог термпературы', item:'50'},{name: 'Нижний порог термпературы', item:'0'},{name: 'Порог влажности', item:'85'}, {name: 'Диапазон изменения напряжения:', item:'10'}]
+            
+            ul.sensors__list
+                each val in inputs
+                    li.sensors__item
+                        label(class="sensors__label" + ((val.name == 'Верхний порог термпературы' || val.name == 'Нижний порог термпературы') ? ' grad' : ' percent'))
+                            span.sensors__desc= val.name
+                            input.sensors__input(type="text" value="#{val.item}")
+            .saving__block
+                a.btn(href="#!") Сохранить
+                button.btn.reset(type="reset") Сбросить датчик
+//- sensors block end

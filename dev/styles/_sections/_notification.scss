@@ -1,0 +1,81 @@
+.notify__block {
+    @extend .network__block;
+
+    .widget.notify {
+        flex-basis: auto;
+    }
+    .saving__block {
+        width: 100%;
+    }
+}
+
+.mail__list {
+    @extend .network__list;
+    width: 100px;
+    margin: 30px 0 25px 20px;
+    padding: 0;
+}
+
+.mail__item {
+    @extend .network__item;
+    // margin-left: 40px;
+}
+
+.mail__input {
+    width: 200px;
+    @extend .network__input;
+    font-size: 14px;
+}
+
+.mail__label {
+    @extend .network__label;
+}
+
+.mail__desc {
+    @extend .network__desc;
+}
+
+.textarea__block,.mail__list {
+    flex-basis: 300px;
+	flex-grow: 1;
+}
+
+.textarea__block {
+    margin:0px 30px 30px 30px;
+}
+
+.textarea__item {
+
+    textarea {
+        width: 100%;
+        height: 250px;
+        border-color: #cccccc;
+        font-size: 16px;
+        color: grey;
+        padding: 5px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 2px 2px 7px 0 rgba(204,204,204,.50);
+        resize:none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.textarea__desc {
+    vertical-align: top;
+    margin-right: 20px;
+    color: grey;
+    font-size: 14px;
+    line-height: 30px;
+}
+.saving__block {
+
+    .test {
+        margin-left: 20px;
+        background-color: #348fed;
+    }
+}

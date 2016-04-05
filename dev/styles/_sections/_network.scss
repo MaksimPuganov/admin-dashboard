@@ -26,15 +26,18 @@
         height: auto;
     }
 }
-input {
+.network__input {
+        float: right;
+        width: 150px;
         border-color: #cccccc;
         font-size: 16px;
+        text-align: center;
+        color: grey;
         padding: 5px;
         border-radius: 5px;
         border-width: 1px;
         border-style: solid;
         box-shadow: 2px 2px 7px 0 rgba(204,204,204,.50);
-        float: right;
     &:focus {
         outline: none;
     }
@@ -44,9 +47,14 @@ input {
     width: 300px;
     padding-bottom: 10px;
 }
+
+.network__desc {
+    line-height: 30px;
+}
 .saving__block {
     text-align: center;
     padding-bottom: 20px;
+    margin: 0 auto;
 
     &:hover {
         @include animation(fadeOut 180ms ease-in);
@@ -60,7 +68,7 @@ input {
     }
 }
 
-.network__item {
+.network__item, .sensors__item {
     padding-bottom: 18px;
 
     &.checkbox {
@@ -68,7 +76,7 @@ input {
         text-align: center;
     }
 }
-.network__label {
+.network__label, .sensors__label {
     width: 100%;
     cursor: pointer;
     font-size: 14px;
