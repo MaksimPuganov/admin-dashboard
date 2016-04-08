@@ -13,17 +13,58 @@
 }
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {
-	height: 44px;
-	padding: 20px 10px 0px 40px;
+	// height: 44px;
+	// padding: 20px 0px 0px 20px;
 	font-weight: 700;
+	padding-top: 12px;
+	padding-left: 20px;
+	padding-bottom: 11px;
 
-	.fa {
+	.icon-fa {
 		font-size: 22px;
+	}
+
+	.icon-fa-reddit-alien {
+		@extend .fa-reddit-alien;
 	}
 
 	.title__block {
 		margin-left: 5px;
 		text-transform: uppercase;
+	}
+}
+
+.mangment__menu {
+	position: absolute;
+	top: 12px;
+	right: 90px;
+	z-index: 1;
+
+	.mangment__menu__item {
+		display: inline-block;
+	}
+
+	.icon-fa {
+		font-size: 1.5rem;
+		color: white;
+		margin-right: 10px;
+	}
+
+	.icon-fa-refresh {
+		@extend .fa-refresh;
+	}
+
+	.icon-fa-repeat {
+		@extend .fa-repeat;
+	}
+
+	.icon-fa-sign-out {
+		@extend .fa-sign-out;
+		// font-size: 1.2rem;
+	}
+
+	.icon-fa-power-off {
+		@extend .fa-power-off;
 	}
 }
 
@@ -33,6 +74,7 @@
 	width: 20px;
 	height: 44px;
 	right: 30px;
+	top: -48px;
 	display: block;
 
 	.humburger {

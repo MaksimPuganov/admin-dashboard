@@ -1,8 +1,25 @@
 //- header block start
 .header
-  .logo
-    i.fa.fa-reddit-alien
-    span.title__block Brand
-  a.nav-trigger(href='#')
-    span.humburger
+    .logo
+        i.icon-fa.icon-fa-reddit-alien
+        span.title__block Brand
+    ul.mangment__menu
+        li.mangment__menu__item
+            .reboot(data-balloon="Reboot" data-balloon-pos="down")
+                i.icon-fa.icon-fa-refresh
+                //- | Reboot
+        li.mangment__menu__item
+            .reset__btn(data-balloon="Reset" data-balloon-pos="down")
+                i.icon-fa.icon-fa-repeat
+                //- | Reset
+        li.mangment__menu__item
+            .power__btn(data-balloon="PowerOff" data-balloon-pos="down")
+                i.icon-fa.icon-fa-power-off
+                //- | Power On
+        li.mangment__menu__item
+            .logout(data-balloon="Logout" data-balloon-pos="down")
+                i.icon-fa.icon-fa-sign-out
+                    //- | Logout
+    a.nav-trigger(href='#')
+        span.humburger
 //- header block end

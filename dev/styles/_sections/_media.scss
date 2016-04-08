@@ -1,4 +1,45 @@
 /* set element styles to fit tablet and higher(desktop) */
+@media screen and (min-width: 300px) and (max-width: 430px) {
+
+	.mail__item {
+		width: 220px;
+	}
+
+	.mail__desc {
+		float: left;
+		// margin-right: 80px;
+	}
+
+	.mail__input {
+		float: none;
+	}
+
+	.sensors__block {
+		.btn {
+			display: block;
+			width: 30%;
+			margin: 0 auto;
+			padding: 3px 40px;
+		}
+
+		.reset {
+			display: block;
+			width: 50%;
+			margin-top: 10px;
+			padding: 3px 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.mangment__menu {
+		.icon-fa {
+			color: #233245;
+		}
+	}
+}
+
 @media screen and (min-width: 600px) {
 	.header {
 		background-color: #35475e;
@@ -6,6 +47,7 @@
 		.logo {
 			display: none;
 		}
+
 	}
 
 	.nav-trigger {
@@ -25,7 +67,7 @@
 		}
 
 		.logo {
-			.fa {
+			.icon-fa {
 				padding-left: 12px;
 			}
 
@@ -36,7 +78,7 @@
 
 		.nav__list {
 			.nav__item {
-				.fa {
+				.icon-fa {
 					font-size: 26px;
 				}
 
@@ -56,7 +98,7 @@
 		width: 200px;
 
 		.logo {
-			.fa {
+			.icon-fa {
 				padding-left: 0;
 			}
 
@@ -71,7 +113,7 @@
 					display: inline-block;
 				}
 
-				.fa {
+				.icon-fa {
 					font-size: 16px;
 				}
 

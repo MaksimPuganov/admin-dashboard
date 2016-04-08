@@ -4,6 +4,10 @@
     .widget.notify {
         flex-basis: auto;
     }
+
+    .wrap {
+        margin-bottom: 10px;
+    }
     .saving__block {
         width: 100%;
     }
@@ -12,13 +16,12 @@
 .mail__list {
     @extend .network__list;
     width: 100px;
-    margin: 30px 0 25px 20px;
+    margin: 20px 20px 0 20px;
     padding: 0;
 }
 
 .mail__item {
     @extend .network__item;
-    // margin-left: 40px;
 }
 
 .mail__input {
@@ -41,7 +44,7 @@
 }
 
 .textarea__block {
-    margin:0px 30px 30px 30px;
+    margin: 0px 30px 0px 30px;
 }
 
 .textarea__item {

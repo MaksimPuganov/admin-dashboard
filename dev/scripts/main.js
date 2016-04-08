@@ -4,6 +4,9 @@ $(document).ready(function() {
     });
 
     var displayBlock = function (block, that) {
+
+        //function show blocks
+
         var isClassActive = that.hasClass('active'),
             act = $('.nav__item.active'),
             sect = $('section'),
@@ -26,32 +29,45 @@ $(document).ready(function() {
             block.removeClass('hidden')
         }
     }
-
-
-
+// show block Dashboard
     $('#dash').click(function() {
         var block = $('.dashboard__block');
 
         displayBlock(block, $(this));
     })
-
+// show block Network
     $('#network').click(function() {
         var block = $('.network__block');
 
         displayBlock(block, $(this));
     })
-
+// show block Sensors
     $('#sensors').click(function() {
         var block = $('.sensors__block');
 
         displayBlock(block, $(this));
     })
-
+// show block Notification
     $('#notify').click(function() {
         var block = $('.notify__block');
 
         displayBlock(block, $(this));
     })
+// show block Settings
+    $('#settings').click(function() {
+        var block = $('.settings__block');
 
+        displayBlock(block, $(this));
+    })
+// enabled/disabled input for network settings
+    $('.checkbox').click(function () {
+        var check = $('.network__label input[type="checkbox"]:checked'),
+            label = $('.network__input');
+        if (check.length) {
+            label.prop("disabled", true);
+        } else {
+            label.prop("disabled", false);
+        }
+    })
 
 });

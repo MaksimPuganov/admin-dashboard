@@ -45,7 +45,8 @@
 				text-decoration: none;
 			}
 
-			.fa {
+			.icon-fa {
+				@extend .fa;
 				color: #0497df;
 				min-width: 20px;
 				text-align: center;

@@ -9,10 +9,8 @@ var
 	uncss 		= require('gulp-uncss'),
 	nano		= require('gulp-cssnano'),
 	sourcemaps  = require('gulp-sourcemaps'),
-	uglify 		= require('gulp-uglifyjs'),
-	imagemin 	= require('gulp-imagemin'),
-	pngquant 	= require('imagemin-pngquant'),
-	spritesmith = require('gulp.spritesmith');
+	uglify 		= require('gulp-uglify'),
+	rename		= require('gulp-rename');
 
 /* --------- paths --------- */
 
@@ -41,16 +39,6 @@ var
 		fonts : {
 			location	: 'dev/font/**/*.*',
 			destonation : 'dist/font'
-		},
-
-		sprt : {
-			location 	: './dev/images/icons/*.png',
-			destCSS	 	: './dev/styles/_misc/',
-			destSprite  : './dist/img/icons/',
-			nameCSS		: '_sprite.scss',
-			nameSprite	: 'sprite.png',
-			destPath	: '../img/icons/'
-
 		},
 
 		img : {
@@ -85,6 +73,9 @@ gulp.task('sass', function () {
 		.pipe(uncss(paths.uncss))
 		.pipe(nano())
 		.pipe(sourcemaps.write(paths.scss.entryPoint))
+		// .pipe(rename({
+		// 	suffix: ".min"
+		// }))
 		.pipe(gulp.dest(paths.scss.entryPoint));
 });
 
@@ -96,6 +87,7 @@ gulp.task('js', function () {
 		.pipe(plumber())
 		.pipe(uglify())
 		.pipe(sourcemaps.write(paths.js.dest))
+		.pipe(rename("main.min.js"))
 		.pipe(gulp.dest(paths.js.dest));
 });
 
@@ -104,39 +96,6 @@ gulp.task('js', function () {
 gulp.task('fonts', function () {
 	gulp.src(paths.fonts.location)
 		.pipe(gulp.dest(paths.fonts.destonation));
-});
-
-/* --------- sprites --------- */
-
-gulp.task('sprite', function () {
-  var spriteData = gulp.src(paths.sprt.location).pipe(spritesmith({
-    imgName: paths.sprt.nameSprite,
-    cssName: paths.sprt.nameCSS,
-	imgPath: paths.sprt.destPath+paths.sprt.nameSprite,
-	padding: 60,
-	algorithm: 'left-right'
-  }));
-  spriteData.img.pipe(gulp.dest(paths.sprt.destSprite));
-  spriteData.css.pipe(gulp.dest(paths.sprt.destCSS));
-});
-
-/* --------- images --------- */
-
-gulp.task('images', function () {
-	return gulp.src(paths.img.location)
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{
-				removeViewBox: false
-			}],
-			use: [
-				pngquant({
-					quality: '75-80',
-					speed: 2
-				})
-			]
-		}))
-		.pipe(gulp.dest(paths.img.dest));
 });
 
 /* --------- browser sync --------- */
@@ -156,11 +115,9 @@ gulp.task('watch', function(){
 	gulp.watch(paths.scss.location, ['sass']);
 	gulp.watch(paths.js.location, ['js']);
 	gulp.watch(paths.fonts.location, ['fonts']);
-	gulp.watch(paths.sprt.location, ['sprite']);
-	gulp.watch(paths.img.location, ['images']);
 	gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
 });
 
 /* --------- default --------- */
 
-gulp.task('default', ['sprite', 'images', 'jade', 'sass', 'js', 'fonts', 'sync', 'watch']);
+gulp.task('default', ['jade', 'sass', 'js', 'fonts', 'sync', 'watch']);

@@ -1,0 +1,32 @@
+.settings__list {
+    @extend .network__list;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 350px;
+}
+
+.settings__item {
+    @extend .network__item;
+}
+
+.settings__input {
+    @extend .network__input;
+    width: 170px;
+}
+
+.settings__input[placeholder] {
+
+    font-size: 0.8rem;
+
+    @include placeholder {
+        font-size: 0.8rem;
+    }
+}
+
+.settings__label {
+    @extend .network__label;
+}
+
+.settings__desc {
+    @extend .network__desc;
+}

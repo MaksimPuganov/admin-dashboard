@@ -1,0 +1,27 @@
+//- network block start
+section.settings__block.hidden
+    .title
+        | Network
+    .main
+        .widget
+            .title
+                | Основные настройки
+            - var inputs = [{name:'Новый пароль:', item:'Введите новый пароль'},{name:'Повторить новый пароль:', item:'Повторно введите пароль'}]
+            
+            ul.settings__list
+                li.settings__item
+                    label.settings__label
+                        span.settings__desc Имя устройства:
+                        input.settings__input(type="text" value="Depo DMM")
+                li.settings__item
+                    label.settings__label
+                        span.settings__desc Старый пароль:
+                        input.settings__input(type="password" value="qwerty")
+                each val in inputs
+                    li.settings__item
+                        label.settings__label
+                            span.settings__desc= val.name
+                            input.settings__input(type="password" placeholder="#{val.item}")
+            .saving__block
+                a.btn(href="#!") Сохранить
+//- network block start

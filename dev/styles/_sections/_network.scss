@@ -55,9 +55,11 @@
     text-align: center;
     padding-bottom: 20px;
     margin: 0 auto;
+    @include transform(translate(0px, 0px));
 
     &:hover {
-        @include animation(fadeOut 180ms ease-in);
+        @include transform(translate(0px, -10px));
+        transition: all 800ms cubic-bezier(0.25, 0.35, 0, 1.74);
     }
 
     .btn {
@@ -106,7 +108,7 @@
                 display: inline-block;
                 margin-right: 5px;
                 vertical-align: middle;
-                @include animation(fadeOut 180ms ease-out);
+                @include animation(fadeOut 180ms ease-in);
             }
         }
 
