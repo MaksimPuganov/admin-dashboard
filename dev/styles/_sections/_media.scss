@@ -92,6 +92,20 @@
 		margin-left: 70px;
 	}
 }
+
+@media screen and (min-width: 1080px) and (max-width: 1112px) {
+	.sms__list {
+		margin-top: 2rem;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media screen and (max-width: 1112px) {
+	.sms__list {
+		margin-top: 5rem;
+	}
+}
 /* set element styles for desktop */
 @media screen and (min-width: 800px) {
 	.side-nav {
